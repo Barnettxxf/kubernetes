@@ -15,17 +15,18 @@ then
 	sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 	echo 'preparing install docker.io'
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+	# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+	sudo cp ./sources.list /etc/apt/sources.list
 	sudo apt update
 	echo 'installing docker.io'
-	sudo apt-get install docker.io=17.12.1-0ubuntu1
+	sudo apt-get install docker.io=1.13.1-0ubuntu6
 	echo 'docker.io installed successfully'
 	echo 'preparing install kubu*'
 	curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
 	sudo add-apt-repository "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main"
 	sudo apt-get update
 	echo 'installing kube*'
-	sudo apt-get install -y kubelet kubeadm kubectl
+	sudo apt-get install -y kubelet=1.11.2-00 kubeadm=1.11.2-00 kubectl=1.11.2-00
 	echo 'kube* installed successfully'
 	
 fi
