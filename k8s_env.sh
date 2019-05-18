@@ -13,20 +13,20 @@ if [ ! -e "./already" ]
 then
 	echo 'installing apt-transport-https ca-certificates curl software-properties-common'	
 	sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-	echo 'preparing install docker.io'
+	echo 'preparing install docker-ce'
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 	sudo cp ./sources.list /etc/apt/sources.list
 	sudo apt update
-	echo 'installing docker.io'
-	sudo apt-get install docker.io=1.13.1-0ubuntu6
-	echo 'docker.io installed successfully'
-	echo 'preparing install kubu*'
+	echo 'installing docker-ce'
+	sudo apt-get install docker-ce
+	echo 'docker-ce installed successfully'
+	echo 'preparing install kube*'
 	curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
 	sudo add-apt-repository "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main"
 	sudo apt-get update
 	echo 'installing kube*'
-	sudo apt-get install -y kubelet=1.11.2-00 kubeadm=1.11.2-00 kubectl=1.11.2-00
+	sudo apt-get install -y kubelet=1.14.2-00 kubeadm=1.14.2-00 kubectl=1.14.2-00
 	echo 'kube* installed successfully'
 	
 fi
