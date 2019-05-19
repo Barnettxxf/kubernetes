@@ -1,5 +1,5 @@
 ### 基本环境
-virtualbox下创建一个虚拟机，使用NAT和Host-Only网络,Ubuntu-Server 18.04 LTS,名为k8s-master,再clone一个名为k8s-node01
+virtualbox下创建一个虚拟机，使用桥接网络,Ubuntu-Server 18.04 LTS,名为k8s-master,再clone一个名为k8s-node01
 
 ### 网络注意事项
 1. 在执行kubeadm init时需要将网卡enp0s3(即是NAT的那个网卡)关闭
