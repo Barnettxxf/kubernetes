@@ -7,15 +7,7 @@ spec:
   - name: cm-test
     image: busybox
     command: ["/bin/sh", "-c", "env | grep APP"]
-    env:
-    - name: APPLOGLEVEL
-      valueFrom: 
-        configMapKeyRef:
-          name: cm-appvars
-          key: apploglevel
-    - name: APPDATADIR
-      valueFrom:
-        configMapKeyRef:
-          name: cm-appvars
-          key: appdatadir
-    restartPolicy: Never
+    envFrom:
+    - configMapRef:
+        name: cm-appvars
+  restartPolicy: Never
