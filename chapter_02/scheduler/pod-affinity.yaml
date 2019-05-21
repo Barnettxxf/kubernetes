@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity
+spec:
+  affinity:
+    podAffinity:
+      requireDuringSchedulingIgnoreDuringExecution:
+      - labelSelector:
+         matchExpressions:
+         - key: security
+           operation: In
+           values:
+           - S1
+        topologyKey: kubernetes.io/hostname
+  containers:
+  - name: with-pod-affinity
+    image: registry.cn-hangzhou.aliyuncs.com/google_containers/pause:2.0
+
