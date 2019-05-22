@@ -6,5 +6,6 @@ RUN apt-get update && \
        --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 COPY ./worker.py /worker.py
+COPY ./worker.sh /worker.sh
 
-CMD  /usr/bin/amqp-consume --url $BROKER_URL -q $QUEUE -c 1 /worker.py
+CMD /worker.sh
