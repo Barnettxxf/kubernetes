@@ -1,4 +1,4 @@
-# kubectl create -f ./deploy/1.8+/
+kubectl create -f ./deploy/1.8+/
 
 echo 'please run: kubectl edit cm coredns -n kube-system'
 echo 'and add you nodes host like this'
