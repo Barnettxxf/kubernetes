@@ -11,7 +11,7 @@ metadata:
 subjects:
   - kind: ServiceAccout
     name: dashboard-admin
-	namespace: kube-system
+    namespace: kube-system
 roleRef:
   kind: ClusterRole
   name: cluster-admin

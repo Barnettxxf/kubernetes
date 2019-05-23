@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: php-apache
+  labels:
+    app: php-apache
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-apache
+  template:
+    metadata:
+      name: php-apache
+      labels:
+        app: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.cn-hangzhou.aliyuncs.com/wangfang-k8s/hpa-example
+        resources:
+          requests:
+            cpu: 200m
+        ports:
+        - containerPort: 80
