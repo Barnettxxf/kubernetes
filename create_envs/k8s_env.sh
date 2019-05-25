@@ -13,13 +13,17 @@ if [ ! -e "./already" ]
 then
 	echo 'installing apt-transport-https ca-certificates curl software-properties-common'	
 	sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-	echo 'preparing install docker.io'
+	echo 'preparing install docker-ce'
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 	# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 	sudo cp ./sources.list /etc/apt/sources.list
 	sudo apt update
 	echo 'installing docker.io'
-	sudo apt-get install docker.io=1.13.1-0ubuntu6
+	sudo apt-get install docker
 	echo 'docker.io installed successfully'
 	echo 'preparing install kubu*'
 	curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
