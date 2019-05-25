@@ -1,0 +1,6 @@
+syntax on
+
+inoremap jk <esc>
+set tabstop=4
+set softtabstop=4
+set autoindent
