@@ -30,7 +30,8 @@ then
 	sudo add-apt-repository "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main"
 	sudo apt-get update
 	echo 'installing kube*'
-	sudo apt-get install -y kubelet=1.11.2-00 kubeadm=1.11.2-00 kubectl=1.11.2-00
+	K8S_VERSION='1.14.2-00 500'
+	sudo apt-get install -y kubelet=$K8S_VERSION kubeadm=$K8S_VERSION kubectl=$K8S_VERSION
 	echo 'kube* installed successfully'
 	
 fi
