@@ -21,4 +21,4 @@ virtualbox下创建一个虚拟机，使用桥接网络,Ubuntu-Server 18.04 LTS,
 	`bash docker_operations.sh [your_password]`
 3. 在参考视频进行部署kubernetes时请注意先完成“网络注意事项的内容”
 
-*根据题的操作方法可以参看我写的[此篇微博](https://blog.csdn.net/barnett_xxf/article/details/90579356)*
+*具体的操作方法可以参看我写的[此篇微博](https://blog.csdn.net/barnett_xxf/article/details/90579356)*
